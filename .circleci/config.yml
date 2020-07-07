@@ -1,8 +1,13 @@
 version: 2.1
 
+workflows:
+  build:
+    jobs:
+      - build:
+          context: env-${CIRCLE_BRANCH}
+
 jobs:
   build:
-    context: env-${CIRCLE_BRANCH}
     docker:
       - image: cimg/base:2020.01
     steps:
