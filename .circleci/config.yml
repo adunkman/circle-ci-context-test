@@ -2,6 +2,7 @@ version: 2.1
 
 jobs:
   build:
+    context: env-${CIRCLE_BRANCH}
     docker:
       - image: cimg/base:2020.01
     steps:
